@@ -4,12 +4,14 @@ import pygame_menu
 class MainScreen:
     def __init__(self):
         pygame.init()
-        pygame.mouse.set_visible(False)
+
     def start(self):
         surface = pygame.display.set_mode((128, 128))
 
         menu = pygame_menu.Menu(128, 128, 'PiNokia v0.1',
-                       theme=self.theming())
+                       theme=self.theming(),
+                       mouse_enabled=False,
+                       )
         
         menu.add_text_input('Name :', default='John Doe')
         menu.add_selector('Difficulty :', [('Hard', 1), ('Easy', 2)])
