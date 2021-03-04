@@ -18,11 +18,13 @@ class MainScreen:
         # menu.add_selector('Difficulty :', [('Hard', 1), ('Easy', 2)])
         # menu.add_button('Play', None)
         # menu.add_button('Quit', pygame_menu.events.EXIT)\
-        wallpaper = os.path.join(os.path.dirname(pygame_menu.__file__,
+        wallpaper = os.path.join(os.path.dirname(__file__),
+                        "..",
                         "media",
-                        "pinokia.jpg"
+                        "pinokia.png"
                     )
-        menu.add_image(wallpaper, scale=(0.15, 0.15))
+        print(wallpaper)
+        menu.add_image(wallpaper, scale=(0.4, 0.4))
         menu.add_button('Menu',action=None,align=pygame_menu.locals.ALIGN_CENTER)
 
         menu.mainloop(surface)
