@@ -4,7 +4,7 @@ import pygame_menu
 class MainScreen:
     def __init__(self):
         pygame.init()
-        
+        pygame.mouse.set_visible(False)
     def start(self):
         surface = pygame.display.set_mode((128, 128))
 
@@ -28,8 +28,8 @@ class MainScreen:
 
     def theming(self,selection="dark"):
         theme = pygame_menu.themes.Theme(
-                            title_font_size=10,
-                            widget_font_size=8,
+                            title_font_size=12,
+                            widget_font_size=10,
                             background_color=(40, 41, 35),
                             cursor_color=(255, 255, 255),
                             cursor_selection_color=(80, 80, 80, 120),
