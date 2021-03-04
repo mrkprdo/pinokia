@@ -1,5 +1,6 @@
 import pygame
 import pygame_menu
+import os
 
 class MainScreen:
     def __init__(self):
@@ -13,10 +14,16 @@ class MainScreen:
                        mouse_visible=False,
                        )
         
-        menu.add_text_input('Name :', default='John Doe')
-        menu.add_selector('Difficulty :', [('Hard', 1), ('Easy', 2)])
-        menu.add_button('Play', None)
-        menu.add_button('Quit', pygame_menu.events.EXIT)
+        # menu.add_text_input('Name :', default='John Doe')
+        # menu.add_selector('Difficulty :', [('Hard', 1), ('Easy', 2)])
+        # menu.add_button('Play', None)
+        # menu.add_button('Quit', pygame_menu.events.EXIT)\
+        wallpaper = os.path.join(os.path.dirname(pygame_menu.__file__,
+                        "media",
+                        "pinokia.jpg"
+                    )
+        menu.add_image(wallpaper, scale=(0.15, 0.15))
+        menu.add_button('Menu',action=None,align=pygame_menu.locals.ALIGN_CENTER)
 
         menu.mainloop(surface)
 
